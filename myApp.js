@@ -1,39 +1,13 @@
-let express = require('express');
-let app = express();
+const express = require('express');
+const app = express();
+require('dotenv').config();
 
 
-app.get('/',(req,res)=>{
-    res.send("Hello Express")
+app.get('/name', (req, res) => {
+  const firstName = req.query.first;
+  const lastName = req.query.last;
+  res.json({ name: `${firstName} ${lastName}` });
 });
 
+
 module.exports = app;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- module.exports = app;
